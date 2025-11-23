@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo Gallery Final Project</title>
+  <style>
+    /* Mobile-first default view */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 10px;
+    }
+
+    figure {
+      margin: 0;
+      padding: 10px;
+      border: 2px solid #ccc;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Tablet view ≥ 772px */
+    @media (min-width: 772px) {
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+      figure {
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      figure:last-child {
+        grid-column: span 2;
+      }
+    }
+
+    /* Large screen view ≥ 992px */
+    @media (min-width: 992px) {
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+      figure {
+        border-radius: 0;
+      }
+      figure:nth-child(3n) {
+        grid-column: span 2;
+      }
+    }
+
+    /* Prefers reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #111;
+        color: #eee;
+      }
+      figure {
+        background-color: #222;
+        color: #ffeb3b;
+        border: 2px solid #000;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Responsive Photo Gallery</h1>
+    <p>Bộ sưu tập ảnh cá nhân với thiết kế responsive, hỗ trợ mobile, tablet, large screen và dark mode.</p>
+  </header>
+
+  <main class="gallery">
+    <figure>
+      <img src="https://png.pngtree.com/thumb_back/fh260/background/20210902/pngtree-beautiful-early-morning-sunrise-scenery-in-the-mountains-clouds-and-sky-image_789793.jpg" alt="Phong cảnh núi buổi sáng" />
+      <figcaption>Bình minh trên núi</figcaption>
+    </figure>
+    <figure>
+      <img src="https://media-int.vnecdn.net/3594480/data/images/2017/06/02/Nha-Trang-Anh-nhatrangtoday_1496395933_VnEx_mobile_600x0.jpg" alt="Bãi biển xanh với cát trắng" />
+      <figcaption>Biển xanh cát trắng</figcaption>
+    </figure>
+    <figure>
+      <img src="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/06/anh-thanh-pho-1.jpg" alt="Thành phố về đêm với ánh đèn" />
+      <figcaption>Thành phố về đêm</figcaption>
+    </figure>
+    <figure>
+      <img src="https://cdn3.ivivu.com/2017/03/nhung-khu-rung-xanh-muot-dep-tua-thien-duong-ivivu-2.jpg" alt="Khu rừng xanh mát" />
+      <figcaption>Rừng xanh</figcaption>
+    </figure>
+    <figure>
+      <img src="https://i0.wp.com/viethungnguyen.com/wp-content/uploads/2014/11/011.jpg?ssl=1" alt="Hồ nước phẳng lặng buổi chiều" />
+      <figcaption>Hồ nước buổi chiều</figcaption>
+    </figure>
+  </main>
+</body>
+</html>
